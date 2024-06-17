@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+    <title>{% block titulo %}{% endblock %}</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="{% static 'contenido/css/styles.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    
+</head>
+<style>
+    .image img {
+    max-width: 100%;
+    height: auto;
+}
+</style>
+<body>
+
+    <!-- Barra de menú -->
+    <div class="columns w3-red">
+        <aside class=" w3-bar-block" style="width:15%" id="p2">
+            <div class="section">
+                <div class="container">
+                    <a href="#">
+                        <figure class="image">
+                            <img class="is-rounded" src="{% block imagen %}{% endblock %}">
+                        </figure>
+                        <div class="user-info">
+                            {% block sub %} <span>al Menu</span>{% endblock %}
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Menú de navegación -->
+                <ul class="menu-list"><br>
+                    <li><a href="{% url 'Principal' %}">Principal</a></li><br>
+                    <li><a href="{% url 'Cursos' %}">Cursos</a></li><br>
+                    <li><a href="{% url 'Contacto' %}">Contacto</a></li><br>
+                </ul>
+                <!-- /Fin menú -->
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <div class="column page-content">
+            <!-- Encabezado -->
+            <section class="hero is-primary">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title">
+                            {% block h3 %}{% endblock %}
+                        </h1>
+                        <h2 class="subtitle">
+                            {% block small %}{% endblock %}
+                        </h2>
+                    </div>
+                </div>
+            </section>
+            <nav class="breadcrumb" aria-label="breadcrumbs">
+                <ul>
+                    <li><a href="{% url 'Principal' %}">
+                        {% if request.path == '/' %}
+                            Principal
+                        {% else %}
+                            Principal {{ request.path }}
+                        {% endif %}
+                    </a></li>
+                </ul>
+            </nav>
+
+            <section class="section">
+                <div class="container">
+                    {% block contenido %}
+                    {% endblock %}
+                </div>
+            </section>
+            
+<div>
+</div>
+            <div class="box">
+                <figure class="image is-16by9">
+                    <iframe
+                      class="has-ratio"
+                      width="640"
+                      height="360"
+                      src="{% block video%}{% endblock %}"
+                      frameborder="0"
+                      allowfullscreen
+                    ></iframe>
+                  </figure>
+                </div>
+
+            <!-- /Contenido Principal -->
+        </div>
+    </div>
+
+    <script>
+        // Disable the widescreen breakpoint
+$widescreen-enabled: false;
+
+// Disable the fullhd breakpoint
+$fullhd-enabled: false;
+    </script>
+</body>
+</html>
