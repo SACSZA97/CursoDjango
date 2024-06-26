@@ -20,7 +20,8 @@ from contenido import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-        path('',views.principal, name="Principal"),
+    path('',views.principal, name="Principal"),
     path('contacto/',views.contacto, name="Contacto"),
     path('cursos/',views.formulario, name="Cursos"),
+    path('base/',views.base, name="Base"),
 ]
