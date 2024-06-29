@@ -17,10 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from contenido import views
-
+from django.conf import settings
+from cursos import views as views_cursos
 urlpatterns = [
     path('admin/', admin.site.urls),
-        path('',views.principal, name="Principal"),
+    path('',views_cursos.actividad, name="Principal"),
     path('contacto/',views.contacto, name="Contacto"),
     path('cursos/',views.formulario, name="Cursos"),
+    path('base/',views.base, name="Base"),
 ]

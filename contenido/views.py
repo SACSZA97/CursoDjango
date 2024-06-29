@@ -12,3 +12,7 @@ def contacto(request):
 def formulario(request):
 
     return render(request,"contenido/cursos.html")
+
+def base(request):
+
+    return render(request,"contenido/base.html")

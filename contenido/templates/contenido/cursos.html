@@ -1,60 +1,80 @@
 {% extends "contenido/base.html" %}
 
-{% block titulo %} Cursos {% endblock %}
 
 
-{% block imagen %}
+{% block option1 %}Base de datos{% endblock %}
+{% block option2 %}Ciber Seguridad{% endblock %}
+{% block option3 %}Programación Avanzada{% endblock %}
+{% block option4 %}Diseño Gráfico Profesional{% endblock %}
 
-{% load static%}
-{% static 'contenido/images/convocatoria_utm.jpg' %}
+{% block titulo %}CURSOS{% endblock %}
 
-{% endblock%}
-{% block sub  %} Cursos {% endblock %}
-
-{% block h3%}Todos nuestros cursos{% endblock%}
-{% block small%}Puedes elejir entre nuestra lista de cursos en base a lo que encesitas{% endblock%}
-
-{% block video %}https://www.youtube.com/embed/_LIfXwwqsc4?si=vfHRDpA330zLm1kU{% endblock %}
+{% block sub %}La Universidad Tecnológica de Morelia cuenta con diversas carreras enfocadas al futuro.{% endblock %}
 
 {% block contenido %}
-			<!-- Formulario -->
-			<form class="form-horizontal" action="#" role="form">
-	            <div class="panel panel-default">
-	                <div class="panel-body">
-
-				        <div class="form-group">
-				            <label class="col-sm-2 control-label text-right">Nombre:</label>
-				            <div class="col-sm-10">
-				            	<input type="text" class="input">
-				            </div>
-				        </div>
-						<div class="form-group" style="field">
-				            <label class="col-sm-2 control-label text-right ">Cursos:</label>
-				            <div class="control">
-				            	<select data-placeholder="Elige un Curso..." class="select is-fullwidith" tabindex="3">
-	                                <option class="option" value=""></option> 
-	                                <option class="option" value="based">Base de datos</option> 
-	                                <option class="option" value="progra">Programacion</option> 
-	                                <option class="option" value="ciber">Ciber Seguridad</option>
-                                    <option class="option" value="otro">Mas</option> 
-	                        	</select>
-				            </div>
-				        </div>
-						<div class="form-group">
-				            <label class="col-sm-2 control-label text-right">Turno:</label>
-				            <div class="col-sm-10">
-				            	<input type="radio" name="turno" class="styled" checked="checked"> Matutino
-											<input type="radio" name="turno" class="styled"> Vespertino
-				            </div>
-				        </div>
-				        
-                        <div class="form-actions is-pulled-right">
-							<button class="button is-primary is-rounded" >Enviar </button>
+        <!-- Portfolio Modals-->
+        <!-- Portfolio Modal 1-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-					
-				    </div>
-				</div>
-			</form>
-		<!-- Fin del Formulario -->
-
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 2-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cake.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         {% endblock %}
