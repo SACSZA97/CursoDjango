@@ -1,0 +1,44 @@
+{% extends "contenido/base.html" %}
+
+
+
+
+{% block titulo %}PRINCIPAL{% endblock %}
+
+{% block sub%}La universidad tecnologica de morelia los invita a nuestra convocatoria en la cual podras encontrar tu futuro{% endblock%}
+
+{% for actividad in 9B %}
+
+{% block option1 %}Base de datos{% endblock %}
+{% block option2 %}Ciber Seguridad{% endblock %}
+{% block option3 %}Programación Avanzada{% endblock %}
+{% block option4 %}Diseño Gráfico Profesional{% endblock %}
+
+
+
+{% endfor%}
+
+{% block contenido %}	
+
+
+
+
+<div class="form-floating mb-3">
+    <label class="input-group">Cursos:</label><br>
+    <label class="form-floating"></label><br>
+    <select class="form-select">
+        {% for actividad in 9B %}
+            <option>
+                {{ actividad.id }} - {{ actividad.nombre }} - {{ actividad.created }} - {{ actividad.desc }}
+            </option>
+        {% endfor %}
+    </select>
+</div>
+<div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+<!-- Submit Button-->
+<button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Enviar</button>
+
+
+			
+{% endblock %}
+
